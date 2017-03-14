@@ -1,0 +1,80 @@
+#welcomePhoto {
+	width:50%;
+	margin:auto;
+}
+
+#splashscreen {
+	text-align:center;
+}
+
+@font-face {
+	font-family: "4077TH";
+	src:url("../images/4077TH.TTF");
+}
+
+#masthead {
+	font-family: "4077TH";
+	text-align:center;
+	color:black;
+	font-size:100px;
+}
+
+.welcome_link {
+	font-family: "4077TH";
+	font-size:70px;
+	margin-top:20px;
+	text-decoration:none;
+	color:gray;
+}
+
+
+#splashscreen {
+	background-color:#4b5320;
+}
+
+#clickHere {
+	color:black;
+	font-size:40px;
+	margin:20px 20px 20px 20px;
+	clear:both;
+}
+
+#submit {
+	background-color:#4b5320;
+	padding:20px 20px 20px 20px;
+	border:black 5px;
+	margin:30px 30px 30px 30px;
+}
+
+#timer, #timerText {
+	text-align:center;
+}
+
+body h3 {
+	font-size:30px;
+	text-align:left;
+}
+
+label {
+	margin:0px 20px 20px 30px;
+	font-size:20px;
+	padding-left:70px;
+}
+
+#background {
+	background-image:url();
+}
+
+.questionDiv {
+	border:2px #4b5320 solid;
+	margin:20px;
+	padding:10px;
+	overflow:auto;
+}
+
+.photos {
+	float:right;
+	height:50%;
+	width:50%;
+	margin:10px;
+}
