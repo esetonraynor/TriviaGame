@@ -1,4 +1,10 @@
 window.onload = function() {
+
+	$("#clickHere").click(function() {
+		var song=$("#backgroundMusic");
+		play.loop=true;
+		song.play();
+	})
 	
 	var intervalId;
 	var time = 180;
@@ -8,7 +14,7 @@ start();
 
 	function reset() {
 		time = 180;
-		$("#timer").html("3:00");
+		$("#time").html("3:00");
 	}
 	
 	function start() {
@@ -18,7 +24,7 @@ start();
 	function count() {
 		time--;
 		var converted=timeConverter(time);
-		$("#timer").html(converted);
+		$("#time").html(converted);
 	}
 
 	function timeConverter(t) {
@@ -49,7 +55,9 @@ function timeUp() {
 reset();
 
 var numberCorrect=0;
+localStorage.setItem("correct", numberCorrect);
 var numberWrong=0;
+localStorage.setItem("incorrect", numberWrong);
 
 checkOne();
 checkTwo();
@@ -255,28 +263,30 @@ function checkTwenty() {
 }
 
 
-document.location.href="index.html";
+document.location.href="finalPage.html";
 
 
-$("#noCorrect").html=numberCorrect;
-$("#noIncorrect").html=numberWrong;
+$("#noCorrect").html("You got " + numberCorrect + " correct!");
+$("#noIncorrect").html("You got " + numberIncorrect + " wrong.");
+// $("#noCorrect").html=localStorage.getItem(numberCorrect);
+// $("#noIncorrect").html=localStorage.getItem(numberWrong);
 
-alert("you scored " + numberCorrect + " correct and " + numberWrong+ " incorrect!");
+//alert("you scored " + numberCorrect + " correct and " + numberWrong+ " incorrect!");
 
 if (numberCorrect === 20) {
-	alert("You must've watched every episode! You are M*A*S*H fanatic. Congratulations!");
+	$("#expertLevel").html("You must've watched every episode! You are M*A*S*H fanatic. Congratulations!");
 }
 
 if (numberCorrect >= 15 && numberCorrect <= 19) {
-	alert("You definitely know a lot about M*A*S*H! Now go brush up on the details.");
+	$("#expertLevel").html("You definitely know a lot about M*A*S*H! Now go brush up on the details.");
 }
 
 if (numberCorrect > 10 && numberCorrect <= 14) {
-	alert("Great try! You could definitely afford to watch more M*A*S*H!");
+	$("#expertLevel").html("Great try! You could definitely afford to watch more M*A*S*H!");
 }
 
 if (numberCorrect <= 10) {
-	alert("You need to watch more M*A*S*H!!");
+	$("#expertLevel").html("You need to watch more M*A*S*H!!");
 }
 
 }
@@ -287,7 +297,9 @@ $("#submit").click(function check() {
 reset();
 
 var numberCorrect=0;
+localStorage.setItem("correct", numberCorrect);
 var numberWrong=0;
+localStorage.setItem("incorrect", numberWrong);
 
 checkOne();
 checkTwo();
@@ -491,29 +503,32 @@ function checkTwenty() {
 	}
 }
 
-document.location.href="index.html";
+document.location.href="finalPage.html";
 
 
-$("#noCorrect").html=numberCorrect;
-$("#noIncorrect").html=numberWrong;
+$("#noCorrect").html("You got " + numberCorrect + " correct!");
+$("#noIncorrect").html("You got " + numberIncorrect + " wrong.");
+// $("#noCorrect").html=localStorage.getItem(numberCorrect);
+// $("#noIncorrect").html=localStorage.getItem(numberWrong);
 
-alert("you scored " + numberCorrect + " correct and " + numberWrong+ " incorrect!");
+//alert("you scored " + numberCorrect + " correct and " + numberWrong+ " incorrect!");
 
 if (numberCorrect === 20) {
-	alert("You must've watched every episode! You are M*A*S*H fanatic. Congratulations!");
+	$("#expertLevel").html("You must've watched every episode! You are M*A*S*H fanatic. Congratulations!");
 }
 
 if (numberCorrect >= 15 && numberCorrect <= 19) {
-	alert("You definitely know a lot about M*A*S*H! Now go brush up on the details.");
+	$("#expertLevel").html("You definitely know a lot about M*A*S*H! Now go brush up on the details.");
 }
 
 if (numberCorrect > 10 && numberCorrect <= 14) {
-	alert("Great try! You could definitely afford to watch more M*A*S*H!");
+	$("#expertLevel").html("Great try! You could definitely afford to watch more M*A*S*H!");
 }
 
 if (numberCorrect <= 10) {
-	alert("You need to watch more M*A*S*H!!");
+	$("#expertLevel").html("You need to watch more M*A*S*H!!");
 }
+
 });
 
 }

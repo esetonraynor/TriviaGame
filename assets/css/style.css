@@ -1,3 +1,11 @@
+* {
+	border-style:border-box;
+}
+
+.jumbotron {
+	background-color:#4b5320;
+}
+
 #welcomePhoto {
 	width:50%;
 	margin:auto;
@@ -12,6 +20,11 @@
 	src:url("../images/4077TH.TTF");
 }
 
+@font-face {
+	font-family: "TravelingTypewriter";
+	src:url("../images/TravelingTypewriter.TTF");
+}
+
 #masthead {
 	font-family: "4077TH";
 	text-align:center;
@@ -24,7 +37,7 @@
 	font-size:70px;
 	margin-top:20px;
 	text-decoration:none;
-	color:gray;
+	color:white;
 }
 
 
@@ -37,6 +50,7 @@
 	font-size:40px;
 	margin:20px 20px 20px 20px;
 	clear:both;
+	background-color:white;
 }
 
 #submit {
@@ -47,7 +61,17 @@
 }
 
 #timer, #timerText {
+	font-family: "4077TH";
+	position:fixed;
+	top:2%;
+	right:2%;
 	text-align:center;
+	font-size:50px;
+	color:black;
+	width:30%;
+	background-color:white;
+	border-radius:3px;
+	/*border:10px #4b5320 solid;*/
 }
 
 body h3 {
@@ -56,25 +80,41 @@ body h3 {
 }
 
 label {
-	margin:0px 20px 20px 30px;
-	font-size:20px;
-	padding-left:70px;
+	font-family: "TravelingTypewriter";
+	padding-left:30px;
+	font-size:30px;
 }
 
+
 #background {
-	background-image:url();
+	background: url(../images/mashBackground.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	/*background-image:url("../images/mashBackground.jpg") 100%;
+	background-attachment:scroll;
+	background-attachment:fixed;*/
 }
 
 .questionDiv {
-	border:2px #4b5320 solid;
-	margin:20px;
+	/*border:10px #4b5320 solid;*/
+	margin-left:200px;
+	margin-top:2%;
 	padding:10px;
 	overflow:auto;
+	background-color:white;
+	width:50%;
+}
+
+.question {
+	font-size:50px;
+	font-family: "TravelingTypewriter";
 }
 
 .photos {
 	float:right;
-	height:50%;
-	width:50%;
-	margin:10px;
+	height:20%;
+	width:20%;
+	margin:20px;
 }
