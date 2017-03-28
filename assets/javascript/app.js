@@ -52,12 +52,12 @@ start();
 
 function timeUp() {
 
+var numberCorrect=0;
+var numberWrong=0;
+
+
 reset();
 
-var numberCorrect=0;
-localStorage.setItem("correct", numberCorrect);
-var numberWrong=0;
-localStorage.setItem("incorrect", numberWrong);
 
 checkOne();
 checkTwo();
@@ -262,16 +262,19 @@ function checkTwenty() {
 	}
 }
 
+localStorage.setItem("correct", numberCorrect);
+
+localStorage.setItem("incorrect", numberWrong);
+
+
 
 document.location.href="finalPage.html";
 
+$("#noCorrect").html(localStorage.getItem("correct"));
+$("#noIncorrect").html(localStorage.getItem("incorrect"));
 
-$("#noCorrect").html("You got " + numberCorrect + " correct!");
-$("#noIncorrect").html("You got " + numberIncorrect + " wrong.");
-// $("#noCorrect").html=localStorage.getItem(numberCorrect);
-// $("#noIncorrect").html=localStorage.getItem(numberWrong);
 
-//alert("you scored " + numberCorrect + " correct and " + numberWrong+ " incorrect!");
+alert("you scored " + numberCorrect + " correct and " + numberWrong+ " incorrect!");
 
 if (numberCorrect === 20) {
 	$("#expertLevel").html("You must've watched every episode! You are M*A*S*H fanatic. Congratulations!");
@@ -297,9 +300,9 @@ $("#submit").click(function check() {
 reset();
 
 var numberCorrect=0;
-localStorage.setItem("correct", numberCorrect);
+
 var numberWrong=0;
-localStorage.setItem("incorrect", numberWrong);
+
 
 checkOne();
 checkTwo();
@@ -503,15 +506,17 @@ function checkTwenty() {
 	}
 }
 
+localStorage.setItem("correct", numberCorrect);
+localStorage.setItem("incorrect", numberWrong);
+
 document.location.href="finalPage.html";
 
 
-$("#noCorrect").html("You got " + numberCorrect + " correct!");
-$("#noIncorrect").html("You got " + numberIncorrect + " wrong.");
-// $("#noCorrect").html=localStorage.getItem(numberCorrect);
-// $("#noIncorrect").html=localStorage.getItem(numberWrong);
+$("#noCorrect").html(localStorage.getItem("correct"));
+$("#noIncorrect").html(localStorage.getItem("incorrect"));
 
-//alert("you scored " + numberCorrect + " correct and " + numberWrong+ " incorrect!");
+
+alert("you scored " + numberCorrect + " correct and " + numberWrong+ " incorrect!");
 
 if (numberCorrect === 20) {
 	$("#expertLevel").html("You must've watched every episode! You are M*A*S*H fanatic. Congratulations!");
